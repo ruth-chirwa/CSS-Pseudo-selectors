@@ -8,14 +8,159 @@ html{
   }
 /* to ensure elements are completely hidden visually.*/
   span[class~="sr-only"]{
-    border: 0;
+    border: 0 !important;
 /*The CSS clip property is used to define the visible portions
  of an element. Set the span[class~="sr-only"] selector 
 to have a clip property of rect(1px, 1px, 1px, 1px).*/
-clip-path: inset(50%); /*Specifies a clipping path where everything inside the path is visible
+clip-path: inset(50%) !important; /*Specifies a clipping path where everything inside the path is visible
  and everything outside is clipped out.*/
-clip: rect(1px, 1px, 1px, 1px); /*Deprecated. Use the 'clip-path' property when support allows. 
+clip: rect(1px, 1px, 1px, 1px) !important; /*Deprecated. Use the 'clip-path' property when support allows. 
 Defines the visible portion of an element's box.*/
-width: 1px;
-  height: 1px;
+width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;/*To prevent the text content from overflowing*/
+  white-space: nowrap !important;/*Specifies how whitespace is handled in an element.*/
+  position: absolute !important;/*The position CSS property sets how an element is positioned in a document.*/
+  padding: 0 !important;/*Shorthand property to set values for the thickness of the padding area.*/
+  margin: -1px !important;/*Shorthand property to set values for the thickness of the margin area.*/
+  /*!important keyword to ensure these properties are always applied, regardless of order or specificity.*/
+  }
+
+  h1{
+    max-width: 37.25rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+  }
+
+  h1 .flex{
+    display: flex;
+    flex-direction: column-reverse; /*Specifies how flex items are placed in the flex container, 
+    by setting the direction of the flex container's main axis.*/
+    gap: 1rem;/*The gap CSS property is a shorthand property for row-gap 
+    and column-gap specifying the gutters between grid rows and columns.*/
+  }
+
+  /*The :first-of-type pseudo-selector is used 
+  to target the first element that matches the selector. */
+  h1 .flex span:first-of-type{
+    font-size: 0.7em;
+  }
+
+  /*The :last-of-type pseudo-selector does the exact opposite - 
+  it targets the last element that matches the selector.*/
+  h1 .flex span:last-of-type{
+    font-size: 1.2em;
+  }
+  section{
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0d5;
+  }
+  section{
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0d5;
+  }
+  #years{
+    display: flex;
+    justify-content: flex-end;
+    top: 0;
+    position: sticky;
+    color: #fff;
+  background-color: #0a0a23;
+  margin: 0 -2px;
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;/*The calc() function is a CSS function 
+  that allows you to calculate a value based on other values.*/
+  z-index: 999;/*property specifies the stack level of the box in the current stacking context 
+  and whether the box establishes a local stacking context.*/
+  }
+/*The span[class] syntax will target any span element that has a class attribute set,
+ regardless of the attribute's value.*/
+  #years span[class]{
+    font-weight: bold;
+     width: 4.5rem;
+     text-align: right;
+  }
+  .table-wrap{
+    padding: 0 0.75rem 1.5rem 0.75rem;
+  }
+  /*The :not() pseudo-selector is used to target all elements that do not match the selector - in this case, 
+  any of your span elements that do not have the sr-only class. */
+  /*span:not(.sr-only){
+    font-weight: normal !important;
+  }
+  span {
+    font-weight: normal !important;
+  }*/
+  table{
+    border-collapse: collapse;/*border-collapse property to collapse,
+     which will allow cell borders to collapse into a single border, 
+    instead of a border around each cell.*/
+    border: 0;
+    width: 100%;
+  margin-top: 3rem;
+  position: relative;
+  }
+
+  table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+  }
+
+  tbody td{
+    width: 100vw;
+    min-width: 4rem;
+    max-width: 4rem;
+  }
+
+  tbody th{
+    width: calc(100% - 12rem);
+  }
+  /*The [attribute="value"] selector
+   targets any element that has an attribute with a specific value.*/
+   tr[class="total"]{
+    border-bottom: 4px double #0a0a23;
+    font-weight: bold;
+  }
+
+  tr[class="total"] th{
+    padding: 0.5rem 0 0.25rem 0.5rem;
+    text-align: left;
+  }
+  tr.total td:nth-of-type(3){
+    padding-right: 0.5rem;
+  } 
+
+  tr.total:hover{
+    background-color: #356eaf;
+  }
+  td.current{
+    font-style: italic;
+  }
+  tr.data{
+    background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+  }
+  tr.data th{
+    text-align: left;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+  }
+  tr.data th .description{
+    display: block;
+    font-style: italic;
+    font-weight: normal;
+    padding: 1rem 0 0.75rem;
+    margin-right: -13.5rem;
+  }
+  tr.data td{
+    text-align: right;
+    padding: 0.3rem 0.25rem 0;
+    vertical-align: top;
+  }
+  tr.data td:last-of-type{
+    padding-right: 0.5rem;
   }
