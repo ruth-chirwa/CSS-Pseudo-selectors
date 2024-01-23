@@ -1,0 +1,21 @@
+html{
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family: sans-serif;
+    color: #0a0a23;
+  }
+/* to ensure elements are completely hidden visually.*/
+  span[class~="sr-only"]{
+    border: 0;
+/*The CSS clip property is used to define the visible portions
+ of an element. Set the span[class~="sr-only"] selector 
+to have a clip property of rect(1px, 1px, 1px, 1px).*/
+clip-path: inset(50%); /*Specifies a clipping path where everything inside the path is visible
+ and everything outside is clipped out.*/
+clip: rect(1px, 1px, 1px, 1px); /*Deprecated. Use the 'clip-path' property when support allows. 
+Defines the visible portion of an element's box.*/
+width: 1px;
+  height: 1px;
+  }
